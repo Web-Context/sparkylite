@@ -3,11 +3,14 @@ package com.webcontext.apps;
 import static spark.Spark.before;
 import static spark.Spark.delete;
 import static spark.Spark.get;
+import static spark.Spark.halt;
 import static spark.Spark.post;
 import static spark.Spark.put;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import spark.Spark;
 
 import com.google.gson.Gson;
 
@@ -107,7 +110,7 @@ public class SparkyLite {
 					boolean authenticated = ((request.headers("WS-KEY") != null) && request
 							.headers("WS-KEY").equals(WS_SECRET_KEY));
 					if (!authenticated) {
-						response.status(401);
+						halt(401);
 					}
 				});
 	}
