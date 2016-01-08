@@ -1,5 +1,7 @@
 package com.webcontext.apps;
 
+import spark.ResponseTransformer;
+
 import com.google.gson.Gson;
 
 public class JsonTransformer implements ResponseTransformer {
