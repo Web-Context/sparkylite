@@ -28,31 +28,46 @@ public class App {
 
   // retrieve some data with parameters
   get("/post/:id", (request, response) -> {
-    for(POst p : posts){
+    for(Post p : posts){
       if ((""+p.getId()).equals(request.params(":id")){
-        return "Post id: " + request.params(":id");
+        return p;
       }else{
         halt(404, "Post not found");
       }
     }
-  });
+  }, new JsonTransformer());
 
   // Create some data
   post("/post", (request, response) -> {
-   // ....
+      Gson gson = new Gson();
+      Post post = gson.parse(request.body, Post.class);
+      halt(200,"Post width title=["+post.getTitle()+"]created.");
   });
 
   // Update some data
   put("/post/:id", (request, response) -> {
-   String postId = request.params(":id");
-   // ....
+   for(Post p : posts){
+      if ((""+p.getId()).equals(request.params(":id")){
+        posts.remove(p);
+        Gson gson = new Gson();
+        Post post = gson.parse(request.body, Post.class);
+        posts.add(post);
+      }else{
+        halt(404, "Post id="+request.params(":id")+" does not exist.");
+      }
+    }
   });
 
   // delete some data
-  delete("/", (request, response) -> {
-   // ....
+  delete("/post/:id", (request, response) -> {
+    for(Post p : posts){
+      if ((""+p.getId()).equals(request.params(":id"))){
+        halt(200,"post delete");
+      }else{
+        halt(204,"unknown post for id="+request.params(":id"));
+      }
+    }
   });
-
 
   // Verify some thing in header on each request
   before((request, response) -> {
