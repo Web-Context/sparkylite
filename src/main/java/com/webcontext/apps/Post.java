@@ -8,12 +8,12 @@ package com.webcontext.apps;
  */
 public class Post {
 
-	private long id;
+	private Long id;
 	private String title;
 	private String content;
 	private String tags;
 	private String author;
-	private boolean published = false;
+	private Boolean published = false;
 
 	public Post(long id, String title, String content, String tags,
 			String author) {
@@ -24,14 +24,12 @@ public class Post {
 		this.author = author;
 	}
 
-
 	public Post(long id, String title, String content, String tags,
 			String author, boolean published) {
-		this(id,title,content,tags,author);
+		this(id, title, content, tags, author);
 		this.published = published;
 	}
 
-	
 	/*---- Getters/Setters ----*/
 
 	/**
@@ -125,6 +123,20 @@ public class Post {
 	}
 
 	/**
+	 * Copy all attributed which value!=null.
+	 * 
+	 * @param p
+	 */
+	public void updateFrom(Post p) {
+		this.id = (p.id != null ? p.id : this.id);
+		this.title = (p.title != null ? p.title : this.title);
+		this.content = (p.content != null ? p.content : this.content);
+		this.tags = (p.tags != null ? p.tags : this.tags);
+		this.author = (p.author != null ? p.author : this.author);
+		this.published = (p.published != null ? p.published : this.published);
+	}
+
+	/**
 	 * Build String from object.
 	 */
 	public String toString() {
@@ -137,9 +149,9 @@ public class Post {
 				.append(title)
 				// if content size >20 characters, truncate string to 20 char.
 				.append(",content=")
-				.append(content.length() > 20 ? content.substring(0, 20) : content)
-				.append(",tags=").append(tags).append(",author=")
-				.append(author).append("]").toString();
+				.append(content.length() > 20 ? content.substring(0, 20)
+						: content).append(",tags=").append(tags)
+				.append(",author=").append(author).append("]").toString();
 	}
 
 }

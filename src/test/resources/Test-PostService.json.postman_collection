@@ -1,0 +1,511 @@
+{
+	"id": "0d04b6cc-573c-1612-7fbc-50da7cd0979e",
+	"name": "Test PostService",
+	"description": "Retrieve posts from http://localhost:4567/api/v1/post",
+	"order": [
+		"7c3a66a2-87c9-6a9a-0f87-b3569739c1d4",
+		"d493a27a-66e7-8df5-1995-e31411a1d7a7",
+		"84b9bf2f-24b5-785f-bceb-901767dba9be",
+		"30abe2b0-9503-17a7-fcc1-676f113ba5cf",
+		"8dce78ed-ead9-6082-4478-561d014c6e59"
+	],
+	"folders": [],
+	"timestamp": 1452516285248,
+	"owner": "",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "30abe2b0-9503-17a7-fcc1-676f113ba5cf",
+			"headers": "WS-KEY: MySecretKey\n",
+			"url": "http://localhost:4567/api/v1/post/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "PUT",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1452521483136,
+			"name": "Update title of post id=1",
+			"description": "Update the title attribute of post id=1.",
+			"collectionId": "0d04b6cc-573c-1612-7fbc-50da7cd0979e",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 16,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 11 Jan 2016 14:12:29 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Jetty(9.3.2.v20150730)",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "Post[id=1,title=title1 updated,content=content 1,tags=tag1,tag2,tag3,author=McG]",
+					"language": "html",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "4dec16ae-6834-0495-d2b1-ef50ee562eca",
+					"name": "updatePost1",
+					"request": {
+						"url": "http://localhost:4567/api/v1/post/1",
+						"headers": [
+							{
+								"key": "WS-KEY",
+								"value": "MySecretKey",
+								"name": "WS-KEY",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "86cd2a3b-6c70-43be-2d79-b2a1d3b046c4"
+							}
+						],
+						"data": "{ \"title\":\"title1 updated\"}\n",
+						"method": "PUT",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{ \"title\":\"title1 updated\"}\n"
+		},
+		{
+			"id": "7c3a66a2-87c9-6a9a-0f87-b3569739c1d4",
+			"headers": "WS-KEY: MySecretKey\n",
+			"url": "http://localhost:4567/api/v1/post",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1452521490805,
+			"name": "Retrieve Posts",
+			"description": "Retreve all posts from [http://localhost:4567/api/v1/post](http://localhost:4567/api/v1/post \"All posts\")",
+			"collectionId": "0d04b6cc-573c-1612-7fbc-50da7cd0979e",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 16,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 11 Jan 2016 14:11:37 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Jetty(9.3.2.v20150730)",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "[{\"id\":2,\"title\":\"title 2\",\"content\":\"content 2\",\"tags\":\"tag1,tag2,tag3\",\"author\":\"McG\",\"published\":true},{\"id\":6,\"title\":\"test create\",\"content\":\"content created\",\"tags\":\"test,unit,rest\",\"author\":\"user01\",\"published\":true},{\"id\":1,\"title\":\"title1 updated\",\"content\":\"content 1\",\"tags\":\"tag1,tag2,tag3\",\"author\":\"McG\",\"published\":true}]",
+					"language": "html",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "c5449e9e-9229-2f41-3c24-bc78dc1b2973",
+					"name": "retrievedPosts",
+					"request": {
+						"url": "http://localhost:4567/api/v1/post",
+						"headers": [
+							{
+								"key": "WS-KEY",
+								"value": "MySecretKey",
+								"name": "WS-KEY",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "23b4d1de-eb36-0ef0-4bd6-1e105fbdd97b"
+							}
+						],
+						"data": "{ \"id\":6,\n\"title\":\"test create\",\n\"tags\":\"test,unit,rest\",\n\"content\":\"content created\",\n\"author\":\"user01\",\n\"published\":true}\n",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				},
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 125,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 11 Jan 2016 14:13:32 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Jetty(9.3.2.v20150730)",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "[{\"id\":1,\"title\":\"title 1\",\"content\":\"content 1\",\"tags\":\"tag1,tag2,tag3\",\"author\":\"McG\",\"published\":true},{\"id\":2,\"title\":\"title 2\",\"content\":\"content 2\",\"tags\":\"tag1,tag2,tag3\",\"author\":\"McG\",\"published\":true},{\"id\":3,\"title\":\"title 3\",\"content\":\"content 3\",\"tags\":\"tag1,tag2,tag3\",\"author\":\"McG\",\"published\":true}]",
+					"language": "html",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "20d16668-79b7-72ce-ca00-eb952f984420",
+					"name": "deletePost3",
+					"request": {
+						"url": "http://localhost:4567/api/v1/post",
+						"headers": [
+							{
+								"key": "WS-KEY",
+								"value": "MySecretKey",
+								"name": "WS-KEY",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "287b2d2c-7c0b-5b27-f6e2-fa2f9e1d234a"
+							}
+						],
+						"data": "{ \"title\":\"title1 updated\"}\n",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
+		},
+		{
+			"id": "84b9bf2f-24b5-785f-bceb-901767dba9be",
+			"headers": "WS-KEY: MySecretKey\n",
+			"url": "http://localhost:4567/api/v1/post",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1452521486836,
+			"name": " Create Post id=6",
+			"description": "Retreve all posts from [http://localhost:4567/api/v1/post](http://localhost:4567/api/v1/post \"All posts\")",
+			"collectionId": "0d04b6cc-573c-1612-7fbc-50da7cd0979e",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 201,
+						"name": "Created",
+						"detail": "The request has been fulfilled and resulted in a new resource being created."
+					},
+					"time": 27,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 11 Jan 2016 14:12:16 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Jetty(9.3.2.v20150730)",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"id\":6,\"title\":\"test create\",\"content\":\"content created\",\"tags\":\"test,unit,rest\",\"author\":\"user01\",\"published\":true}",
+					"language": "html",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "1666a1dc-bab1-ca95-fd62-e3d7f6174690",
+					"name": "createPost6",
+					"request": {
+						"url": "http://localhost:4567/api/v1/post",
+						"headers": [
+							{
+								"key": "WS-KEY",
+								"value": "MySecretKey",
+								"name": "WS-KEY",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "4ba74b1a-75fc-aef1-3203-7f6b0fbc4dd6"
+							}
+						],
+						"data": "{ \"id\":6,\n\"title\":\"test create\",\n\"tags\":\"test,unit,rest\",\n\"content\":\"content created\",\n\"author\":\"user01\",\n\"published\":true}\n",
+						"method": "POST",
+						"dataMode": "raw"
+					}
+				}
+			],
+			"rawModeData": "{ \"id\":6,\n\"title\":\"test create\",\n\"tags\":\"test,unit,rest\",\n\"content\":\"content created\",\n\"author\":\"user01\",\n\"published\":true}\n"
+		},
+		{
+			"id": "8dce78ed-ead9-6082-4478-561d014c6e59",
+			"headers": "WS-KEY: MySecretKey\n",
+			"url": "http://localhost:4567/api/v1/post/3",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "DELETE",
+			"collectionId": "0d04b6cc-573c-1612-7fbc-50da7cd0979e",
+			"data": [],
+			"dataMode": "params",
+			"name": "Delete Post  id=3",
+			"description": "Retrieve post with **id=3**.",
+			"descriptionFormat": "html",
+			"time": 1452521163033,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		},
+		{
+			"id": "d493a27a-66e7-8df5-1995-e31411a1d7a7",
+			"headers": "WS-KEY: MySecretKey\n",
+			"url": "http://localhost:4567/api/v1/post/1",
+			"preRequestScript": "",
+			"pathVariables": {},
+			"method": "GET",
+			"data": [],
+			"dataMode": "params",
+			"version": 2,
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1452521488689,
+			"name": "Retrieve Post  id=1",
+			"description": "Retrieve post with **id=1** from [http://localhost:4567/api/v1/post/1](http://localhost:4567/api/v1/post/1 \"retrieve first post\").",
+			"collectionId": "0d04b6cc-573c-1612-7fbc-50da7cd0979e",
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 6,
+					"headers": [
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "text/html;charset=utf-8",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Mon, 11 Jan 2016 14:12:04 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "Jetty(9.3.2.v20150730)",
+							"description": "A name for the server"
+						},
+						{
+							"name": "Transfer-Encoding",
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\"id\":1,\"title\":\"title1 updated\",\"content\":\"content 1\",\"tags\":\"tag1,tag2,tag3\",\"author\":\"McG\",\"published\":true}",
+					"language": "html",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "159bc853-cb9b-15b6-5038-ce0913ef2361",
+					"name": "retrievePost1",
+					"request": {
+						"url": "http://localhost:4567/api/v1/post/1",
+						"headers": [
+							{
+								"key": "WS-KEY",
+								"value": "MySecretKey",
+								"name": "WS-KEY",
+								"enabled": true
+							},
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "a1f611b5-4655-7b65-b6bf-e20467fe6152"
+							}
+						],
+						"data": "{ \"id\":6,\n\"title\":\"test create\",\n\"tags\":\"test,unit,rest\",\n\"content\":\"content created\",\n\"author\":\"user01\",\n\"published\":true}\n",
+						"method": "GET",
+						"dataMode": "params"
+					}
+				}
+			]
+		}
+	]
+}
