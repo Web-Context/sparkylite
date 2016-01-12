@@ -11,7 +11,7 @@ public class SparkyLite {
 	/**
 	 * Service for Post entities.
 	 */
-	PostService postService;
+	PostResource postService;
 
 	public static void main(String[] args) {
 		/**
@@ -25,7 +25,7 @@ public class SparkyLite {
 	}
 
 	public void declareResources() {
-		postService = new PostService();
+		postService = new PostResource();
 		postService.init();
 	}
 

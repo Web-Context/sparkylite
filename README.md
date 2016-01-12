@@ -3,6 +3,8 @@
 A small rest web app to serve basic REST services, demonstrating SparkJava micro-service framewsork
 
 
+## Run !
+
 Run the application and access it with a REst Client to 
 
 GET [http://localhost:4567/post](http://localhost:4567/post "click to discover Rest Magic")
@@ -34,6 +36,8 @@ GET [http://localhost:4567/post/3](http://localhost:4567/post/3 "click to discov
 		{"id":3,"title":"title 3","content":"content 3","tags":"tag1,tag2,tag3","author":"McG","published":true}
 
 
+## Not published ?
+
 Accessing a not already published post (N°4):
 
 GET [http://localhost:4567/post/4](http://localhost:4567/post/4 "click to access the unaccessible")
@@ -49,6 +53,8 @@ GET [http://localhost:4567/post/4](http://localhost:4567/post/4 "click to access
 
 
 Ehehe .. 404 !  logic the 4th post is not already published !
+
+## Publish !
 
 Try to publish one on the existing posts :
 
@@ -84,6 +90,11 @@ it will display all 4 post declared as published :
 	     {"id":1,"title":"title 3","content":"content 3","tags":"tag1,tag2,tag3","author":"McG","published":true},
 	     {"id":4,"title":"title 4","content":"content 4","tags":"tag1,tag2,tag3","author":"McG","published":true}
 	    ]
+
+
+## Configuration
+
+A file ```sparky.propertiese`` has been added to configure Webservice secret key.  see **wskey** value into the properties file.
 
 That's it !
 

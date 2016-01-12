@@ -12,16 +12,26 @@ import static spark.Spark.halt;
  */
 public class GenericService {
 
+	/**
+	 * Secret key to access web service.
+	 */
 	protected static String wsSecretKey = "MySecretkey";
 
-	protected static final String SERVICE_API = "api/";
-	protected String SERVICE_VERSION = "v0";
+	/**
+	 * API basic path.
+	 */
+	protected String serviceApi = "api/";
+	/**
+	 * API basic version.
+	 */
+	protected String serviceVersion = "v0";
 
 	/**
 	 * Default constructor.
 	 */
 	public GenericService() {
 		wsSecretKey = Configuration.get("wskey", "MySecretKey");
+		serviceApi = Configuration.get("baseapi", "api/");
 	}
 
 	/**
@@ -30,7 +40,7 @@ public class GenericService {
 	 * @param version
 	 */
 	public GenericService(String version) {
-		this.SERVICE_VERSION = version;
+		this.serviceVersion = version;
 	}
 
 	/**
@@ -40,7 +50,7 @@ public class GenericService {
 	 */
 	public String baseServicePath() {
 
-		return SERVICE_API + this.SERVICE_VERSION;
+		return serviceApi + this.serviceVersion;
 	}
 
 	public void init() {
