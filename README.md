@@ -9,7 +9,7 @@ Run the application and access it with a REst Client to
 
 GET [http://localhost:4567/post](http://localhost:4567/post "click to discover Rest Magic")
 
-it will display all 5 post declared into the SparkyLite class:
+it will display all 5 posts declared into the SparkyLite class:
 
     Headers:
       Date: Fri, 08 Jan 2016 15:35:23 GMT
