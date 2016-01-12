@@ -7,7 +7,8 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- * Configuration based on a YAML file.
+ * Configuration based on a properties file.
+ * TODO change for a YAML file.
  * 
  * @author Frédéric Delorme
  *
