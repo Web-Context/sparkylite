@@ -16,7 +16,7 @@ import com.webcontext.apps.utils.JsonTransformer;
  * @author Frédéric Delorme
  *
  */
-public class PostResource extends GenericResource {
+public class PostResource extends Resource {
 
 	PostService postService = new PostService();
 
@@ -29,14 +29,16 @@ public class PostResource extends GenericResource {
 
 	public void init() {
 		// retrieve some data
-		get(this.baseServicePath() + "/post", "application/json", (request,
-				response) -> {
+		get(this.path("/post"), 
+				Resource.ContentType.APPLICATION_JSON, 
+				( request, response ) -> {
 			return postService.findAll();
-		}, new JsonTransformer());
+		} , new JsonTransformer());
 
 		// retrieve some data with parameters
-		get(this.baseServicePath() + "/post/:id", "application/json", (request,
-				response) -> {
+		get(this.path("/post/:id"), 
+				Resource.ContentType.APPLICATION_JSON, 
+				( request, response ) -> {
 			String uid = request.params(":id");
 			Post post = postService.findById(uid);
 			if (post != null) {
@@ -46,21 +48,24 @@ public class PostResource extends GenericResource {
 				response.status(404);
 				return "";
 			}
-		}, new JsonTransformer());
+		} , new JsonTransformer());
 
 		// Create some data
-		post(this.baseServicePath() + "/post", (request, response) -> {
+		post(this.path("/post"), 
+				Resource.ContentType.APPLICATION_JSON, 
+				( request, response ) -> {
 			Gson gson = new Gson();
 			Post post = gson.fromJson(request.body(), Post.class);
 			postService.create(post);
 			gson = null;
 			response.status(201);
 			return post;
-		}, new JsonTransformer());
+		} , new JsonTransformer());
 
 		// Update some data
-		put(this.baseServicePath() + "/post/:id", "application/json", (request,
-				response) -> {
+		put(this.path("/post/:id"), 
+				Resource.ContentType.APPLICATION_JSON, 
+				( request, response ) -> {
 			String uid = request.params(":id");
 
 			Gson gson = new Gson();
@@ -76,8 +81,9 @@ public class PostResource extends GenericResource {
 		});
 
 		// publish post
-		put(this.baseServicePath() + "/post/:id/publish", "application/json", (
-				request, response) -> {
+		put(this.path("/post/:id/publish"), 
+				Resource.ContentType.APPLICATION_JSON, 
+				( request, response ) -> {
 			String uid = request.params(":id");
 			Post post = postService.publish(uid);
 			if (post != null) {
@@ -87,11 +93,12 @@ public class PostResource extends GenericResource {
 				response.status(404);
 				return null;
 			}
-		}, new JsonTransformer());
+		} , new JsonTransformer());
 
 		// delete some data
-		delete(this.baseServicePath() + "/post/:id", "application/json", (
-				request, response) -> {
+		delete(this.path("/post/:id"), 
+				Resource.ContentType.APPLICATION_JSON, 
+				( request, response ) -> {
 			String uid = request.params(":id");
 			Post post = postService.deletePost(uid);
 			if (post != null) {
@@ -101,7 +108,7 @@ public class PostResource extends GenericResource {
 				response.status(404);
 				return "unknown resource with id=" + uid;
 			}
-		}, new JsonTransformer());
+		} , new JsonTransformer());
 
 	}
 

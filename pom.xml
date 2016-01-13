@@ -30,6 +30,14 @@
 			<version>2.5</version>
 		</dependency>
 
+		<!-- MongoDB database embedded server -->
+		<dependency>
+			<groupId>de.flapdoodle.embed</groupId>
+			<artifactId>de.flapdoodle.embed.mongo</artifactId>
+			<version>1.50.2</version>
+		</dependency>
+
+
 		<!-- TESTS -->
 		<dependency>
 			<groupId>org.yaml</groupId>
