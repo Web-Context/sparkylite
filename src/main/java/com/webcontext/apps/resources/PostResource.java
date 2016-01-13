@@ -1,4 +1,4 @@
-package com.webcontext.apps;
+package com.webcontext.apps.resources;
 
 import static spark.Spark.delete;
 import static spark.Spark.get;
@@ -6,6 +6,10 @@ import static spark.Spark.post;
 import static spark.Spark.put;
 
 import com.google.gson.Gson;
+import com.webcontext.apps.entities.Post;
+import com.webcontext.apps.services.GenericService;
+import com.webcontext.apps.services.PostService;
+import com.webcontext.apps.utils.JsonTransformer;
 
 /**
  * Rest Service to manage Post CRUD operations.

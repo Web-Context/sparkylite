@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.webcontext.apps;
+package com.webcontext.apps.utils;
 
 import java.io.IOException;
 import java.util.Properties;

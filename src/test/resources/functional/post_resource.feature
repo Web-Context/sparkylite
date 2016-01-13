@@ -28,3 +28,4 @@ Feature: Post management
         Given that on the DB there is a Post with UUID=9999 title="Bad title" header="foobarheader" content="foo bar zum!"
         When I delete Post 9999
 		Then Post 9999 is not found
+        

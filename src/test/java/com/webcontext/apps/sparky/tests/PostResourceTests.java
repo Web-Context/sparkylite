@@ -3,7 +3,7 @@
  */
 package com.webcontext.apps.sparky.tests;
 
-import com.webcontext.apps.Post;
+import com.webcontext.apps.entities.Post;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

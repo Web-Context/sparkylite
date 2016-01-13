@@ -1,4 +1,4 @@
-package com.webcontext.apps;
+package com.webcontext.apps.utils;
 
 import spark.ResponseTransformer;
 

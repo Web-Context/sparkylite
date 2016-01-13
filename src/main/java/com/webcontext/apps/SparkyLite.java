@@ -1,5 +1,7 @@
 package com.webcontext.apps;
 
+import com.webcontext.apps.resources.PostResource;
+
 /**
  * A small demonstration application to serve REST Post CRUD actions.
  * 

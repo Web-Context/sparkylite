@@ -1,7 +1,9 @@
-package com.webcontext.apps;
+package com.webcontext.apps.services;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.webcontext.apps.entities.Post;
 
 /**
  * 

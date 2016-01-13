@@ -1,7 +1,9 @@
-package com.webcontext.apps;
+package com.webcontext.apps.services;
 
 import static spark.Spark.before;
 import static spark.Spark.halt;
+
+import com.webcontext.apps.utils.Configuration;
 
 /**
  * Generic Service encapsulating service access authorization and some basic

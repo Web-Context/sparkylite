@@ -1,4 +1,4 @@
-package com.webcontext.apps;
+package com.webcontext.apps.entities;
 
 /**
  * Simple post object to serve a blog.
