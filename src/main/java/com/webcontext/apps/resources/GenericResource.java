@@ -1,4 +1,4 @@
-package com.webcontext.apps.services;
+package com.webcontext.apps.resources;
 
 import static spark.Spark.before;
 import static spark.Spark.halt;
@@ -12,7 +12,7 @@ import com.webcontext.apps.utils.Configuration;
  * @author Frédéric Delorme
  *
  */
-public class GenericService {
+public class GenericResource {
 
 	/**
 	 * Secret key to access web service.
@@ -31,7 +31,7 @@ public class GenericService {
 	/**
 	 * Default constructor.
 	 */
-	public GenericService() {
+	public GenericResource() {
 		wsSecretKey = Configuration.get("wskey", "MySecretKey");
 		serviceApi = Configuration.get("baseapi", "api/");
 	}
@@ -41,7 +41,7 @@ public class GenericService {
 	 * 
 	 * @param version
 	 */
-	public GenericService(String version) {
+	public GenericResource(String version) {
 		this.serviceVersion = version;
 	}
 
