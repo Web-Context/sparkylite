@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.webcontext.apps.utils;
+package com.webcontext.apps.utils.config;
 
 import java.io.IOException;
 import java.util.Properties;
@@ -24,7 +24,7 @@ public class Configuration {
 	 */
 	private Configuration() {
 		try {
-			props.load(this.getClass().getResourceAsStream("sparky.properties"));
+			props.load(this.getClass().getClassLoader().getResourceAsStream("sparky.properties"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

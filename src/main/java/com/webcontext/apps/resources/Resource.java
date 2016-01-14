@@ -3,7 +3,7 @@ package com.webcontext.apps.resources;
 import static spark.Spark.before;
 import static spark.Spark.halt;
 
-import com.webcontext.apps.utils.Configuration;
+import com.webcontext.apps.utils.config.Configuration;
 
 /**
  * Generic Service encapsulating service access authorization and some basic rule for path access.
@@ -42,8 +42,8 @@ public class Resource {
 	 * Default constructor.
 	 */
 	public Resource() {
-		wsSecretKey = Configuration.get("wskey", "MySecretKey");
-		serviceApi = Configuration.get("baseapi", "api/");
+		wsSecretKey = Configuration.get("resource.wskey", "MySecretKey");
+		serviceApi = Configuration.get("resource.baseapi", "api/");
 	}
 
 	/**

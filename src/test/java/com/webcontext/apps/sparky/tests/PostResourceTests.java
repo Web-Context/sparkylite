@@ -5,12 +5,11 @@ package com.webcontext.apps.sparky.tests;
 
 import com.webcontext.apps.entities.Post;
 
-import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 /**
- * Functinal testing of PostResource REST service.
+ * Functional testing of PostResource REST service.
  * 
  * @author Frédéric Delorme
  *

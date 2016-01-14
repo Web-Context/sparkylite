@@ -8,7 +8,7 @@ import static spark.Spark.put;
 import com.google.gson.Gson;
 import com.webcontext.apps.entities.Post;
 import com.webcontext.apps.services.PostService;
-import com.webcontext.apps.utils.JsonTransformer;
+import com.webcontext.apps.utils.json.JsonTransformer;
 
 /**
  * Rest Service to manage Post CRUD operations.
