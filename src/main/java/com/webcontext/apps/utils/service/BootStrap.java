@@ -22,7 +22,7 @@ public class BootStrap {
 		{
 			MongoJsonImport importData = new MongoJsonImport();
 			try {
-				importData.importJson("", "games");
+				importData.importJson("dataset/games.json", "games");
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

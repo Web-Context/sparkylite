@@ -24,7 +24,7 @@ import com.mongodb.client.FindIterable;
  * @author Frederic
  *
  */
-public class MongoRepository<T> extends MongoRepositoryDb {
+public class MongoRepository extends MongoRepositoryDb {
 
 	/**
 	 * Collection linked to this Repo.
@@ -32,6 +32,7 @@ public class MongoRepository<T> extends MongoRepositoryDb {
 	private String collectionName;
 
 	public MongoRepository() {
+		super();
 		this.collectionName = "repodefault";
 	}
 
@@ -41,8 +42,8 @@ public class MongoRepository<T> extends MongoRepositoryDb {
 	 * @param collectionName
 	 */
 	public MongoRepository(String collectionName) {
+		this();
 		this.collectionName = collectionName;
-
 	}
 
 	/**

@@ -2,7 +2,6 @@ package com.webcontext.apps;
 
 import static spark.Spark.get;
 
-import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import com.webcontext.apps.resources.PostResource;
@@ -22,6 +21,7 @@ public class SparkyLite {
 
 	EmbeddedMongoDbServer mongoDb = null;
 	Boolean embeddedServer = Boolean.parseBoolean(Configuration.get("mongo.embedded", "false"));
+
 	public SparkyLite() {
 		if (embeddedServer) {
 			EmbeddedMongoDbServer mongoDb = new EmbeddedMongoDbServer();
@@ -29,9 +29,8 @@ public class SparkyLite {
 		}
 		System.out.println("Server started");
 	}
-	
-	@PostConstruct
-	public void bootstrap(){
+
+	public void bootstrap() {
 		new BootStrap();
 	}
 
@@ -58,6 +57,10 @@ public class SparkyLite {
 		 * Initialize application.
 		 */
 		SparkyLite sparky = new SparkyLite();
+		/**
+		 * Initialize things needed to be initialized.
+		 */
+		sparky.bootstrap();
 		/**
 		 * Declare Resources for the PostService.
 		 */

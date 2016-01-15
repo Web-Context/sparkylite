@@ -40,6 +40,9 @@ public class MongoRepositoryDb {
 	 */
 	private MongoDatabase database;
 
+	public MongoRepositoryDb() {
+		this.connection();
+	}
 
 	/**
 	 * @return
@@ -50,7 +53,6 @@ public class MongoRepositoryDb {
 		}
 		return database;
 	}
-	
 
 	/**
 	 * Connection to Database
@@ -59,14 +61,22 @@ public class MongoRepositoryDb {
 		// initialize mongoDb connection to just started server.
 		ServerAddress mongoServerAddr = new ServerAddress(Configuration.get("mongo.hostname", "localhost"),
 				Integer.parseInt(Configuration.get("mongo.port", "27017")));
+		try {
 
-		MongoCredential credential = MongoCredential.createCredential(Configuration.get("mongo.username", "sparky"),
-				Configuration.get("mongo.database", "sparkygames"),
-				Configuration.get("mongo.password", "ykraps").toCharArray());
+			if (Configuration.get("mongo.securize", "false").equals("true")) {
+				MongoCredential credential = MongoCredential.createCredential(
+						Configuration.get("mongo.username", "sparky"),
+						Configuration.get("mongo.database", "sparkygames"),
+						Configuration.get("mongo.password", "ykraps").toCharArray());
 
-		client = new MongoClient(Arrays.asList(mongoServerAddr), Arrays.asList(credential));
-
+				client = new MongoClient(Arrays.asList(mongoServerAddr), Arrays.asList(credential));
+			} else {
+				client = new MongoClient(Arrays.asList(mongoServerAddr));
+			}
+		} catch (Exception e) {
+			System.err.println("Unabke to connect to database " + mongoServerAddr);
+		}
 		return client;
 	}
-	
+
 }
