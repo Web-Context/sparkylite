@@ -1,0 +1,147 @@
+[
+{
+    "_id" : ObjectId("5521c6de849d260e685b3776"),
+    "name" : "Microsoft Xbox 360",
+    "accesskey" : "X",
+    "id" : 1,
+    "availabilityDate" : "2005-11-22 00:00:00",
+    "manufacturer" : "Flextronics, Wistron, Celestica, Foxconn",
+    "createdAt" : "2015-07-01 16:48:23",
+    "code" : "x360",
+    "developer" : "Microsoft",
+    "pictures" : {
+        "big" : "http://ecx.images-amazon.com/images/I/41God7KwSOL._SL1000_.jpg",
+        "medium" : "http://ecx.images-amazon.com/images/I/41God7KwSOL._SL500_.jpg",
+        "small" : "http://ecx.images-amazon.com/images/I/41God7KwSOL._SL250_.jpg"
+    }
+}
+,
+{
+    "_id" : ObjectId("5521c6de849d260e685b3774"),
+    "name" : "Nintendo Wii U",
+    "accesskey" : "U",
+    "id" : 2,
+    "availabilityDate" : "2012-11-30 00:00:00",
+    "manufacturer" : "Nintendo, Foxconn, Mitsumi",
+    "createdAt" : "2015-07-01 16:48:23",
+    "code" : "wiiu",
+    "developer" : "Nintendo IRD, NTD",
+    "pictures" : {
+        "big" : "http://ecx.images-amazon.com/images/I/61uEf%2B%2BcUxL._SL1000_.jpg",
+        "medium" : "http://ecx.images-amazon.com/images/I/61uEf%2B%2BcUxL._SL500_.jpg",
+        "small" : "http://ecx.images-amazon.com/images/I/61uEf%2B%2BcUxL._SL250_.jpg"
+    }
+},
+{
+    "_id" : ObjectId("5521c6de849d260e685b377a"),
+    "name" : "Nintendo Wii",
+    "accesskey" : "W",
+    "id" : 3,
+    "availabilityDate" : "2006-12-08 00:00:00",
+    "manufacturer" : "Foxconn",
+    "createdAt" : "2015-07-01 16:48:23",
+    "code" : "wii",
+    "developer" : "Nintendo",
+    "pictures" : {
+        "big" : "http://ecx.images-amazon.com/images/I/41eak-%2B7F-L._SL1000_.jpg",
+        "medium" : "http://ecx.images-amazon.com/images/I/41eak-%2B7F-L._SL500_.jpg",
+        "small" : "http://ecx.images-amazon.com/images/I/41eak-%2B7F-L._SL250_.jpg"
+    }
+},
+{
+    "_id" : ObjectId("5521c6de849d260e685b377b"),
+    "name" : "Sony PlayStation Portable",
+    "accesskey" : "3",
+    "id" : 4,
+    "availabilityDate" : "2005-09-01 00:00:00",
+    "manufacturer" : "Sony Computer Entertainment",
+    "createdAt" : "2015-07-01 16:48:23",
+    "code" : "psp",
+    "developer" : "Sony Computer Entertainment",
+    "pictures" : {
+        "big" : "http://ecx.images-amazon.com/images/I/41XIEugi89L._SL1000_.jpg",
+        "medium" : "http://ecx.images-amazon.com/images/I/41XIEugi89L._SL500_.jpg",
+        "small" : "http://ecx.images-amazon.com/images/I/41XIEugi89L._SL250_.jpg"
+    }
+},
+{
+    "_id" : ObjectId("5521c6de849d260e685b377c"),
+    "name" : "Microsoft Xbox One",
+    "accesskey" : "O",
+    "id" : 5,
+    "availabilityDate" : "2014-03-28 00:00:00",
+    "manufacturer" : "Flextronics, Wistron, Celestica, Foxconn",
+    "createdAt" : "2015-07-01 16:48:23",
+    "code" : "xone",
+    "developer" : "Microsoft",
+    "pictures" : {
+        "big" : "http://ecx.images-amazon.com/images/I/61WMo899E5L._SL1000_.jpg",
+        "medium" : "http://ecx.images-amazon.com/images/I/61WMo899E5L._SL500_.jpg",
+        "small" : "http://ecx.images-amazon.com/images/I/61WMo899E5L._SL250_.jpg"
+    }
+},
+{
+    "_id" : ObjectId("5521c6de849d260e685b3779"),
+    "name" : "Sony PlayStation 3",
+    "accesskey" : "3",
+    "id" : 6,
+    "availabilityDate" : "2007-03-23 00:00:00",
+    "manufacturer" : "Sony",
+    "createdAt" : "2015-07-01 16:48:23",
+    "code" : "ps3",
+    "developer" : "SCEI",
+    "pictures" : {
+        "big" : "http://ecx.images-amazon.com/images/I/81z%2BeF07ClL._SL1000_.jpg",
+        "medium" : "http://ecx.images-amazon.com/images/I/81z%2BeF07ClL._SL500_.jpg",
+        "small" : "http://ecx.images-amazon.com/images/I/81z%2BeF07ClL._SL250_.jpg"
+    }
+},
+{
+    "_id" : ObjectId("5521c6de849d260e685b3778"),
+    "name" : "Sony PlayStation 4",
+    "accesskey" : "4",
+    "id" : 7,
+    "availabilityDate" : "2014-02-22 00:00:00",
+    "manufacturer" : "Sony, Foxconn",
+    "createdAt" : "2015-07-01 16:48:23",
+    "code" : "ps4",
+    "developer" : "Sony Computer Entertainment",
+    "pictures" : {
+        "big" : "http://ecx.images-amazon.com/images/I/61aeYFqV3IL._SL1000_.jpg",
+        "medium" : "http://ecx.images-amazon.com/images/I/61aeYFqV3IL._SL500_.jpg",
+        "small" : "http://ecx.images-amazon.com/images/I/61aeYFqV3IL._SL250_.jpg"
+    }
+},
+{
+    "_id" : ObjectId("5521c6de849d260e685b3775"),
+    "name" : "Sony PlayStation Vita",
+    "accesskey" : "P",
+    "id" : 8,
+    "availabilityDate" : "2012-02-22 00:00:00",
+    "manufacturer" : "Sony Computer Entertainment",
+    "createdAt" : "2015-07-01 16:48:23",
+    "code" : "psvita",
+    "developer" : "Sony Computer Entertainment",
+    "pictures" : {
+        "big" : "http://ecx.images-amazon.com/images/I/71TER4fbWHL._SL1000_.jpg",
+        "medium" : "http://ecx.images-amazon.com/images/I/71TER4fbWHL._SL500_.jpg",
+        "small" : "http://ecx.images-amazon.com/images/I/71TER4fbWHL._SL250_.jpg"
+    }
+},
+{
+    "_id" : ObjectId("5521c6de849d260e685b3777"),
+    "name" : "Nintendo Dual Screen 3D",
+    "accesskey" : "3",
+    "id" : 9,
+    "availabilityDate" : "2011-02-26 00:00:00",
+    "manufacturer" : "Nintendo, Foxconn",
+    "createdAt" : "2015-07-01 16:48:23",
+    "code" : "3ds",
+    "developer" : "Nintendo",
+    "pictures" : {
+        "big" : "http://ecx.images-amazon.com/images/I/41dGcJITWkL._SL1000_.jpg",
+        "medium" : "http://ecx.images-amazon.com/images/I/41dGcJITWkL._SL500_.jpg",
+        "small" : "http://ecx.images-amazon.com/images/I/41dGcJITWkL._SL250_.jpg"
+    }
+}
+]

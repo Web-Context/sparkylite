@@ -16,20 +16,50 @@
 
 package com.webcontext.apps.utils.mongo;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.net.UnknownHostException;
+
+import org.bson.Document;
 import org.bson.conversions.Bson;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import com.mongodb.client.FindIterable;
+import com.mongodb.util.JSON;
 
 /**
  * @author Frederic
  *
  */
-public class MongoRepository extends MongoRepositoryDb {
+public class MongoRepository<T> extends MongoRepositoryDb {
 
 	/**
 	 * Collection linked to this Repo.
 	 */
 	private String collectionName;
+
+	private Class<T> inferedClass;
+
+	@SuppressWarnings("unchecked")
+	protected Class<T> getGenericClass() {
+		if (inferedClass == null) {
+			Type mySuperclass = getClass().getGenericSuperclass();
+			Type tType = ((ParameterizedType) mySuperclass).getActualTypeArguments()[0];
+			String className = tType.toString().split(" ")[1];
+			try {
+				inferedClass = (Class<T>) Class.forName(className);
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return inferedClass;
+	}
 
 	public MongoRepository() {
 		super();
@@ -91,12 +121,54 @@ public class MongoRepository extends MongoRepositoryDb {
 		return count(collectionName);
 	}
 
-	public FindIterable<Object> find( Bson filter, int offset, int limit, Class type ) {
-		return find(collectionName, type, filter, offset, limit);
+	/**
+	 * Basic search into specific collection for a type class.
+	 * 
+	 * @param filter
+	 *            JSON filtering for type class.
+	 * @param offset
+	 *            first element to retrieve
+	 * @param limit
+	 *            number of element to be retrieved
+	 * @return
+	 */
+	public FindIterable<Object> find( Bson filter, int offset, int limit ) {
+		return find(collectionName, getGenericClass(), filter, offset, limit);
 	}
 
-	protected FindIterable<Object> findAll( Class type ) {
-		return find(collectionName, type, null, 0, 0);
+	/**
+	 * Retrieve all data for type class.
+	 * 
+	 * @param type
+	 * @return
+	 */
+	protected FindIterable<Object> findAll() {
+		return find(collectionName, getGenericClass(), null, 0, 0);
+	}
+
+	/**
+	 * Import <code>jsonFile</code> data into <code>collection</code> of defined database.
+	 * 
+	 * @param jsonFile
+	 * @param collection
+	 * @throws UnknownHostException
+	 * @throws IOException
+	 */
+	public void importJson( String jsonFile ) {
+
+		try {
+			BufferedReader br = new BufferedReader(new FileReader(jsonFile));
+			JsonArray jsonArray = new JsonParser().parse(br).getAsJsonArray();
+			for (int i = 0; i < jsonArray.size(); i++) {
+				JsonElement str = jsonArray.get(i);
+				Document jsonObject = (Document) JSON.parse(str.getAsString());
+				// T obj = gson.fromJson(str, getGenericClass());
+				getDatabase().getCollection(collectionName).insertOne(jsonObject);
+			}
+		} catch (IOException e) {
+			System.err.println("Unable to find data from " + jsonFile);
+		}
+
 	}
 
 }
